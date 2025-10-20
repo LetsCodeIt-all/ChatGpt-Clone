@@ -9,8 +9,8 @@ A modern ChatGPT-style AI chat application built with **React.js**, featuring a 
 - 🧠 Real-time AI chat responses  
 - 🎨 Modern, minimalist UI inspired by ChatGPT  
 - 📱 Fully responsive for mobile & desktop  
-- 💾 Conversation persistence (optional)  
-- 🎙️ Voice input (optional integration)  
+- 💾 Conversation persistence
+- 🎙️ Voice input 
 - ⚡ Fast and lightweight with React hooks  
 
 ---
