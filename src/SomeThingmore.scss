@@ -1,0 +1,70 @@
+// Variables
+$btn-radius: 20px;
+$btn-padding: 20px;
+$btn-font-size: 13px;
+$btn-font-weight: bolder;
+$btn-height: 30px;
+$btn-cursor: pointer;
+$btn-border-color: grey;
+$hover-bg: rgb(255, 251, 251);
+
+// Reset
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// Button Style
+.BtnJi {
+  background-color: white;
+  color: rgb(100, 99, 99);
+  border: 0.2px solid $btn-border-color;
+  border-radius: $btn-radius;
+  padding: $btn-padding;
+  height: $btn-height;
+  font-weight: $btn-font-weight;
+  font-size: $btn-font-size;
+  cursor: $btn-cursor;
+  margin: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: rgb(119, 117, 117);
+    transition: color 0.1s ease-in;
+    font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica,
+      "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 5px;
+    margin: 0; // to keep text vertically aligned
+  }
+
+  &:hover {
+    background-color: $hover-bg;
+    p {
+      color: rgb(22, 22, 22);
+    }
+  }
+}
+
+// Responsive
+@media screen and (max-width: 600px) {
+  .BtnJi {
+    height: 15px;
+    padding: 10px; // smaller padding for small screens
+
+    p {
+      font-size: 11px;
+    }
+  }
+
+  .BoxWithBtns {
+    display: flex; // fixed invalid value "f"
+    flex-wrap: wrap; // optional, if buttons overflow
+  }
+}

@@ -1,0 +1,283 @@
+/* Universal Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  // height: 100%;
+  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #000;
+}
+
+/* ============================
+   APP CONTAINER
+============================ */
+.AppContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  position: relative;
+  // border: 2px dashed pink;
+
+  #Notice {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    color: lightseagreen;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+
+/* ============================
+   STRUCTURE
+============================ */
+.DivWithNav {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Top Section */
+.HalfPart {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  // border: 2px solid yellow;
+
+  > div {
+    width: 100%;
+    height: 100%;
+  }
+
+  .MainHead {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 80px;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 36px;
+    }
+  }
+
+  .DivWithNav {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+/* Bottom Section */
+.AnotherPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  // border: 2px solid yellow;
+
+  > div {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* ============================
+   FOOTER
+============================ */
+.Footer {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #5d5d5d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+
+  a {
+    color: #000;
+    margin: 0 3px;
+    text-decoration: none;
+  }
+}
+
+/* ============================
+   CHAT MODE
+============================ */
+.chating {
+  .HalfPart {
+    flex: 1;
+
+    .MainHead {
+      display: none;
+    }
+
+    .divWithChat {
+      .ExtraSpace {
+        padding: 200px;
+        width: 100%;
+      }
+    }
+  }
+
+  .AnotherPart {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 0 50px;
+    // border: 2px solid red;
+    background-color: #fff;
+  }
+
+  .Footer {
+    font-size: 10px;
+  }
+
+  .InputBoxDown {
+    // border: 2px solid rgb(7, 207, 197);
+    height: 100%;
+  }
+}
+
+/* ============================
+   CHAT BLOCK
+============================ */
+.divWithChat {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .messageBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .Req,
+    .Res {
+      width: 70%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+
+      h4,
+      p {
+        background-color: rgb(247, 245, 245);
+        padding: 10px;
+        margin: 10px;
+        border-radius: 15px;
+      }
+    }
+
+    .Req {
+      justify-content: flex-end;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+
+        .ReqImg {
+          display: flex;
+          gap: 10px;
+        }
+
+        img {
+          height: 100px;
+          width: 100px;
+          border-radius: 20px;
+          transition: all 0.3s ease-in;
+        }
+      }
+    }
+
+    .Res {
+      justify-content: flex-start;
+    }
+
+    .copy_Icon {
+      // position: absolute;
+      // top: 40px;
+      // left: 0;
+      // width: 30px;
+      padding: 5px;
+      font-size: 18px;
+      border-radius: 5px;
+
+      // &:hover {
+      //   background-color: rgb(216, 213, 213);
+      // }
+    }
+
+    // .Req:hover,
+    // .Res:hover {
+    //   height: 30px;
+    // }
+  }
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 510px) {
+  .AnotherPart {
+    justify-content: space-between;
+  }
+  // .MobileType {
+  //   position: absolute;
+  //   // top: 10px;
+  //   bottom: 0px;
+  //   border: 2px solid red;
+  // }
+}
+
+@media (max-width: 430px) {
+  .messageBlock {
+    padding: 10px !important;
+  }
+
+  .Req,
+  .Res {
+    width: 80% !important;
+  }
+
+  .ExtraSpace {
+    padding: 100px !important;
+  }
+
+  .AnotherPart {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .messageBlock {
+    padding: 0 !important;
+  }
+
+  .Req,
+  .Res {
+    width: 90% !important;
+  }
+
+  .ExtraSpace {
+    padding: 0 !important;
+  }
+}

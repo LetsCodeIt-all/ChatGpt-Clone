@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+// Variables
+$btn-radius: 20px;
+$btn-padding: 0px 15px 0 15px;
+$btn-font-size: 13px;
+$btn-font-weight: bolder;
+$btn-height: 36px;
+$btn-cursor: pointer;
+$btn-border-color: grey;
+$hover-bg: rgb(250, 248, 249);
+$popup-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+// Mixin for Buttons
+@mixin button-style($bg-color, $text-color, $border) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: $border;
+  border-radius: $btn-radius;
+  padding: $btn-padding;
+  height: $btn-height;
+  font-weight: $btn-font-weight;
+  font-size: $btn-font-size;
+  cursor: $btn-cursor;
+  margin: 5px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:focus {
+    background-color: $hover-bg;
+    outline: none;
+  }
+}
+.writeIt {
+  display: none;
+}
+// Navbar Styles
+.Navbar {
+  background-color: white;
+  // height: 52px;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  // padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+
+  .ChatGptExtra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    height: 20px;
+    padding: 18px;
+    border-radius: 10px;
+    cursor: $btn-cursor;
+    font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica,
+      "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28.0001px;
+    color: rgb(13, 13, 13);
+
+    &:hover,
+    &:focus {
+      background-color: rgb(238, 240, 240);
+      outline: none;
+    }
+  }
+
+  .popup {
+    position: absolute;
+    top: 52px;
+    width: 300px;
+    height: fit-content;
+    margin: 10px;
+    border-radius: $btn-radius;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: $popup-shadow;
+    background-color: white;
+    &:focus {
+      border: none;
+    }
+    img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+    }
+
+    div {
+      padding: 20px;
+      p {
+        color: rgb(167, 165, 165);
+      }
+    }
+  }
+}
+
+// Button Container
+.Btnsdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Buttons
+.loginBtn {
+  @include button-style(black, white, none);
+}
+
+.SignUpBtn {
+  @include button-style(white, black, 0.2px solid $btn-border-color);
+  &:hover {
+    background-color: $hover-bg;
+  }
+}
+
+// Help Button
+.Help {
+  border-radius: 50%;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: $btn-cursor;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $hover-bg;
+    outline: none;
+  }
+}
+
+// Utility Classes
+.hide {
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .writeIt {
+    display: inline;
+  }
+  .mainSign {
+    display: none;
+  }
+  .Help {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .popup {
+    height: fit-content;
+    // width: 90%;
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    right: 0;
+    padding: 0;
+    img {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 300px) {
+  .HeadofMid {
+    display: none;
+  }
+}
